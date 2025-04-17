@@ -3,12 +3,13 @@ from flask_cors import CORS
 import pandas as pd
 import lightgbm as lgb
 import unicodedata
-
+import os
 
 
 app = Flask(__name__)
 CORS(app)
 
+port = int(os.environ.get("PORT", 10000))
 # I 
 property_type_mapping = {
     'apartment': 0.0,
@@ -143,4 +144,4 @@ def predict():
     return jsonify({'predicted_price': predicted_price})
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=10000)
+    app.run(host='0.0.0.0', port=port)
