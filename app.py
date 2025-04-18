@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-port = int(os.environ.get("PORT", 10000))
+port = int(os.environ.get("PORT", 5000))
 # I 
 property_type_mapping = {
     'apartment': 0.0,
